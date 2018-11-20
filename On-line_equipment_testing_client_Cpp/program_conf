@@ -1,0 +1,7 @@
+{
+	"使用说明": "send_packet_interval为发包间隔（单位：微秒），ip_range为扫描网段（格式：*.*.*.*-*.*.*.*），send_packet_strategy为发包策略,默认为ICMP",
+	"send_packet_interval": 200,
+	"ip_range.bak": "10.0.0.1-10.5.255.255",
+	"ip_range": "10.0.0.1-10.0.0.10",
+	"send_packet_strategy": "ICMP"
+}

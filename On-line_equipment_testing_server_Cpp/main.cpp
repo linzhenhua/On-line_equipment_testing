@@ -38,9 +38,6 @@ void consumer()
          continue;
       }  
 
-       //test
-       //printf("%d\n", count++);
-
        send_reply_icmp(item.saddr, item.daddr);
        //memset(&item, 0, sizeof(item_t));
    }

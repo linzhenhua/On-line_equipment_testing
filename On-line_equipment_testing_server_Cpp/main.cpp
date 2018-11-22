@@ -10,7 +10,7 @@
 #include "./include/concurrentqueue.h"
 #include "./include/blockingconcurrentqueue.h"
 
-#define THREAD_NUM 4
+#define THREAD_NUM 6
 
 moodycamel::ConcurrentQueue<item_t> g_concurrent_queue;
 //moodycamel::BlockingConcurrentQueue<item_t> g_blocking_concurrent_queue;

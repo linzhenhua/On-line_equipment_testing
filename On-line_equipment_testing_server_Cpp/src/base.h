@@ -59,7 +59,6 @@ public:
         sock_ = socket(AF_INET, SOCK_DGRAM, 0);
         if (-1 == sock_)
         {
-            fprintf(stderr, "socket run error\n");
             throw std::exception();
         }
     }
@@ -89,7 +88,6 @@ public:
         fp_ = fopen(conf_path, "rb");
         if(nullptr == fp_)
         {
-            fprintf(stderr, "fopen conf error\n");
             throw std::exception();
         }
         /*把文件指针移动到文件尾*/

@@ -8,7 +8,7 @@
 #include <unistd.h>
 #include <net/if.h>
 
-#include "../include/libnet.h"
+#include "libnet.h"
 
 /*
  * 功能：发送ICMP应答包

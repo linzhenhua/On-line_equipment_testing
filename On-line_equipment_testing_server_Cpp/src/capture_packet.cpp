@@ -7,7 +7,7 @@
 #include <arpa/inet.h>
 #include <netinet/in.h>
 
-#include "../include/pcap/pcap.h"
+#include "pcap.h"
 #include "../include/concurrentqueue.h"
 #include "../include/blockingconcurrentqueue.h"
 #include "capture_packet.h"

@@ -14,7 +14,7 @@
 #include "./include/concurrentqueue.h"
 #include "./include/blockingconcurrentqueue.h"
 
-#define THREAD_NUM 6
+#define THREAD_NUM 3
 
 std::atomic<int> g_count(0);
 

@@ -7,7 +7,7 @@ TARGET = $(ROOT_DIR)/bin/main
 
 INC_PATH = -I$(ROOT_DIR)/include 
 LIB_PATH = -L$(ROOT_DIR)/lib -Wl,-rpath=$(ROOT_DIR)/lib
-LIBS = -no-pie -lpcap -lnet -lm -lpthread
+LIBS = -lpcap -lnet -lm -lpthread
 
 SRCS_C = $(foreach dir, $(SRCS_DIR), $(wildcard $(dir)/*.c))
 SRCS_CPP = $(foreach dir, $(SRCS_DIR), $(wildcard $(dir)/*.cpp))

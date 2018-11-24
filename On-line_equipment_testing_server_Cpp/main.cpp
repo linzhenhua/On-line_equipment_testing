@@ -1,8 +1,12 @@
+#include <iostream>
 #include <vector>
 #include <thread>
+#include<atomic>
 
 #include <stdio.h>
 #include <string.h>
+#include <unistd.h>
+#include <signal.h>
 
 #include "./src/base.h"
 #include "./src/capture_packet.h"
@@ -12,6 +16,8 @@
 
 #define THREAD_NUM 6
 
+std::atomic<int> g_count(1);
+
 moodycamel::ConcurrentQueue<item_t> g_concurrent_queue;
 //moodycamel::BlockingConcurrentQueue<item_t> g_blocking_concurrent_queue;
 
@@ -20,9 +26,6 @@ moodycamel::ConcurrentQueue<item_t> g_concurrent_queue;
 void consumer()
 {
    item_t item;
-
-   //test
-   static int count = 0;
 
    //发送响应数据包
    while(1)
@@ -38,13 +41,23 @@ void consumer()
          continue;
       }  
 
+      g_count++;
+
        send_reply_icmp(item.saddr, item.daddr);
        //memset(&item, 0, sizeof(item_t));
    }
 }
 
+void catch_signal(int sign)
+{
+   std::cout << g_count << std::endl;
+   exit(0);
+}
+
 int main()
 { 
+   signal(SIGINT, catch_signal);
+
    //消费者线程id
    std::vector<std::thread> threads;
 

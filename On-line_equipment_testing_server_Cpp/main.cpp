@@ -16,7 +16,7 @@
 
 #define THREAD_NUM 6
 
-std::atomic<int> g_count(1);
+std::atomic<int> g_count(0);
 
 moodycamel::ConcurrentQueue<item_t> g_concurrent_queue;
 //moodycamel::BlockingConcurrentQueue<item_t> g_blocking_concurrent_queue;

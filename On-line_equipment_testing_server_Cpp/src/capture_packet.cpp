@@ -100,8 +100,8 @@ bool capture_packet()
 		}
 
 		printf("Enter the interface number (1-%d): ", i);
-		//scanf("%d", &adaptor);
-		adaptor = 3;    //test
+		scanf("%d", &adaptor);
+		//adaptor = 3;    //test
 
 		if(adaptor <= 0 || adaptor > i)
         {

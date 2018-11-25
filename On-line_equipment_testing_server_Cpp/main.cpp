@@ -37,9 +37,6 @@ void consumer()
          //printf("try_dequeue error\n");
 
          delay(1000);
-
-         printf("delay(1000)\n");
-
          continue;
       }  
 
